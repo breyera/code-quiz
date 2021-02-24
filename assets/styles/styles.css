@@ -7,8 +7,27 @@
 body {
     height: 100%;
     font: normal 16px Arial, Helvetica, sans-serif;
-    background-color: #fafafa;
+    background-color: #424242;
     line-height: 1.4em;
+    color: #FFF;
+  }
+
+  a:visited {
+    color: inherit;
+}
+
+  .btn {
+      display: inline-block;
+      font-weight: bold;
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid transparent;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s;
+  }
+  .btn:hover {
+      opacity: 0.6;
   }
 
   /* style nav  */
@@ -17,10 +36,61 @@ body {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
-      padding: 1rem 1rem;
-      background-color: #424242;
+      justify-content: flex-end;
+      padding: 1rem 3rem;
+      background-color: #1b1b1b;
       color: #FFF;
   }
 
   /* style quiz container and card */
+  .container {
+      margin: 4rem auto;
+      width: 50%;
+      text-align: center;
+  }
+
+  .container h1 {
+      font-size: 3rem;
+      margin-top: auto;
+      margin-bottom: 0;
+      padding-bottom: 3rem;
+      letter-spacing: 2px;
+  }
+  
+  /* start styling card */
+  .card {
+     padding-top: 1.5rem; 
+     color: #FFF;
+     border: 5px solid #7f0000;
+     background-color: #616161;
+  }
+
+  .welcome {
+      font-size: larger;
+      padding: 2rem 2rem;
+  }
+
+  .welcome h3 {
+      font-size: 2rem;
+      padding-bottom: 1rem;
+      line-height: 1.2rem;
+  }
+
+  .welcome p {
+      margin: 1rem 0;
+  }
+
+  .welcome h4 {
+      font-size: 1.5rem;
+      margin: 2rem 0;
+  }
+
+  .start-button {
+      background-color: #7f0000;
+      color: #FFF;
+  }
+
+  /* hide quiz content to be added with javascript  */
+  .quiz-content {
+      display: none;
+  }
