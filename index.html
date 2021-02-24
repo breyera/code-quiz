@@ -46,12 +46,24 @@
             <!-- results page -->
             <div class="results"> <!-- show their score --> <!-- input initials -->
                 <h2>See How You Did</h2>
-                <form method="POST" class="score-results" id="score-results">
-                    <h3>High Scores</h3>
+                <form method="POST">
+                    <div class="score-results" id="score-results">
+                        <label class="scoreCount" for="scoreCount">Your Final Score:&nbsp;</label><span class="scoreCount"></span>
+                        <br>
+
+                        <input type="text" placeholder="Enter Initials" name="name-content" class="name-content">
+                        <button class="btn btn-des" id="submit">Record Your Score</button>
+                    </div>
+                    <hr>
+                    <div class="results-score">
+                        <form class="max-auto score-form1" method="POST">
+                            <h3>High Scores</h3>
+                        </form>
+                        <ul class="score-list"></ul> <!-- show other scores, clear, or play again -->
+                        <button class="btn btn-des clearScore">Clear Scores</button>
+                        <a href="index.html" class="btn play-again">Play Again?</a>  
+                    </div>
                 </form>
-                <ul class="score-list"></ul> <!-- show other scores, clear, or play again -->
-                <button class="btn btn-info clearScore">Clear Scores</button>
-                <a href="index.html" class="btn play-again">Play Again?</a>  
             </div>
 
             <!-- box footer with timer and option to view high scores -->
