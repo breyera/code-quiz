@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+</head>
+<body>
+    <header class="nav">
+        <h2>Coding Quiz Challenge</h2>
+    </header>
+
+    <!-- main quiz card -->
+    <div class="container">
+        <h1>Code Quiz</h1>
+        <section class="card">
+            <div class="welcome">
+                <h3>Your Challenge</h3>
+                <p>Welcome to the code quiz. You have 60 seconds to answer as many questions as you can and prove your coding knowledge. But be careful - if you answer incorrectly, you'll be penalized 10 seconds. Submit your initials at the end to record your score or try again. Click the START QUIZ button when you're ready to begin.</p>
+                <p>Good luck!</p>
+                <div><button class="btn start-button">START QUIZ</button></div>
+            </div>
+            <!-- code for quiz contents to be added by js  -->
+            <div class="card-in quiz-box">
+                <div class="quiz-content">
+                    <div class="question">
+                        <p>" "</p>
+                    </div>
+                    <!-- multiple choice buttons for options A, B, C -->
+                    <div class="mulchoice">
+                        <button type="button" class="btn btn-des choice choiceA"></button> <br>
+
+                        <button type="button" class="btn btn-des choice choiceB"></button> <br>
+
+                        <button type="button" class="btn btn-des choice choiceC"></button> <br>
+                    </div>
+
+                    <!-- was question wrong or correct -->
+                    <hr> <div class="rightwrong"></div>
+                </div>
+            </div>
+
+            <!-- results page -->
+            <div class="results">
+                <h2>See How You Did</h2>
+                <form method="POST">
+                    <!-- show their score -->
+
+                    <!-- input initials -->
+
+                    <!-- show other scores, clear, or play again -->
+                </form>
+            </div>
+
+            <!-- box footer with timer and option to view high scores -->
+            <div class="box-footer"></div>
+        </section>
+    </div>
+
+
+    <script src="./assets/js/script.js"></script>
+
+    <footer></footer>
+</body>
+</html>
