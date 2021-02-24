@@ -43,25 +43,37 @@
             </div>
 
             <!-- results page -->
-            <div class="results">
+            <div class="results"> <!-- show their score --> <!-- input initials -->
                 <h2>See How You Did</h2>
-                <form method="POST">
-                    <!-- show their score -->
-
-                    <!-- input initials -->
-
-                    <!-- show other scores, clear, or play again -->
+                <form method="POST" class="score-results" id="score-results">
+                    <h3>High Scores</h3>
                 </form>
+                <ul class="score-list"></ul> <!-- show other scores, clear, or play again -->
+                <button class="btn btn-info clearScore">Clear Scores</button>
+                <a href="index.html" class="btn play-again">Play Again?</a>  
             </div>
 
             <!-- box footer with timer and option to view high scores -->
-            <div class="box-footer"></div>
+            <section class="box-footer">
+                <div class="row">
+                    <div class="col">
+                        <h3><span class="timer">Timer: </span><span class="showTime"></span></h3>
+                    </div>
+                    <div class="col">
+                        <a href="#score-results" class="score-link btn btn-results view">High Scores</a>
+                    </div>
+                </div>
+            </section>
         </section>
     </div>
 
 
     <script src="./assets/js/script.js"></script>
 
-    <footer></footer>
+    <footer>
+        <div>
+            &copy; Designed by Alicia Breyer
+        </div>
+    </footer>
 </body>
 </html>
