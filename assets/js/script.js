@@ -27,48 +27,72 @@ var currentQuest = 0;
 var initialsList = [];
 var quizQuestions = [
     {
-        question: ,
-        choices: ['blue', 'red', 'yellow'],
-        correctAnswer: 'blue' //compare text on button to text in correctAnswer
+        question: 'Why do JavaScript and Java have similar names',
+        choices: ["JavaScript is a stripped-down version of Java", "JavaScript's syntax is loosely based on Java's", "They both originated on the island of Java"],
+        correctAnswer: "JavaScript's syntax is loosely based on Java's" //compare text on button to text in correctAnswer
     }, 
     {
-        question: ,
-        choiceA: ,
-        choiceB: ,
-        choiceC: ,
-        correctAnswer:
+        question: 'When a user views a page containing a JavaScript program, which machine actually executes the script?',
+        choices: ["The User's machine running a Web browser", "The Web server", "A central machine deep within Netscape's corporate offices"],
+        correctAnswer: "The User's machine running a Web browser"
     },
     {
-        question: ,
-        choiceA: ,
-        choiceB: ,
-        choiceC: ,
-        correctAnswer:
+        question: " _____ JavaScript statements embedded in an HTML page can respond to user events such as mouse-clicks, form input, and page navigation.",
+        choices: ['Client-side', 'Server-side', 'Local'],
+        correctAnswer: 'Client-side'
     },
     {
-        question: ,
-        choiceA: ,
-        choiceB: ,
-        choiceC: ,
-        correctAnswer:
+        question: 'Using _______ statement is how you test for a specific condition.',
+        choices: ['For', 'If', 'Switch'],
+        correctAnswer: 'If'
     },
     {
-        question: ,
-        choiceA: ,
-        choiceB: ,
-        choiceC: ,
-        correctAnswer:
+        question: 'What is mean by "this" keyword in javascript?',
+        choices: ['It refers current object', 'It referes previous object', 'It is variable which contains value'],
+        correctAnswer: 'It refers current object'
     },
     {
-        question: ,
-        choiceA: ,
-        choiceB: ,
-        choiceC: ,
-        correctAnswer:
+        question: 'Choose the correct JavaScript syntax to change the content of the following HTML code.',
+        choices: ['document.getElement(“letsfindcourse").innerHTML = "I am a letsfindcourse";', 'document.getElementById(“letsfindcourse").innerHTML = "I am a letsfindcourse";', 'document.getElementById(“letsfindcourse").innerHTML = I am a letsfindcourse;'],
+        correctAnswer: 'document.getElementById(“letsfindcourse").innerHTML = "I am a letsfindcourse";'
     },
+    {
+        question: 'What are the three important manipulations done in a for loop on a loop variable in javascript?',
+        choices: ['the initialization, the Incrementation, and update', 'the initialization, the test, and the update', 'the initialization, the test, and Incrementation'],
+        correctAnswer: 'the initialization, the test, and the update'
+    }
 ];
 
+//add event listener to START QUIZ so timer and questions run
+startButton.addEventListener('click', runQuestions);
 
+ //hide welcome section and remove invisible class from quiz-content
+ function runQuestions() {
+    startTimer();
+    welcome.classList.add('invisible');
+    getQuestions();
+    quizContent.classList.remove('invisible');
+}
+//set timer and count down
+function startTimer() {
+    count = 60;
+    timer = setInterval(() => {
+        if (count < 1) {
+            renderScores();
+        }
+        count--;
+        showTime.textContent = count;
+    }, 1000);
+    getQuestions()
+}
+//pull questions 
+function getQuestions() {
+    var questions = quizQuestions[currentQuest];
+    questionsArray.innerHTML = "<p>" + questions.question + "</p>";
+    choiceA.innerHTML = questions.choices[0];
+    choiceB.innerHTML = questions.choices[1];
+    choiceC.innerHTML = questions.choices[2];
+}
 //on button click, add class invisible to welcome and remove class of invisble from quiz-box
 // at end of on click, call get question function 
 
