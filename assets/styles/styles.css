@@ -92,7 +92,7 @@ body {
   }
 
   /* hide quiz content to be added with javascript  */
-  .quiz-content, .results {
+  .invisible {
       display: none;
   }
   /* style hidden elements  */
