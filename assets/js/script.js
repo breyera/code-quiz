@@ -113,17 +113,9 @@ function getQuestions() {
 }
 //check answer chosen against text to confirm right or wrong to then add or subtract points 
 choiceA.addEventListener('click', checkButton);
-choiceA.addEventListener('click', () => {
-    document.querySelector('.choice').classList.add('choice-wrap');
-  });
 choiceB.addEventListener('click', checkButton);
-choiceB.addEventListener('click', () => {
-    document.querySelector('.choice').classList.add('choice-wrap');
-  });
 choiceC.addEventListener('click', checkButton);
-choiceC.addEventListener('click', () => {
-    document.querySelector('.choice').classList.add('choice-wrap');
-  });
+
 
 var nextQuestion = quizQuestions.length - 1; 
 function checkButton(answer) {

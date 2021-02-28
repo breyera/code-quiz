@@ -34,7 +34,7 @@ footer {
     position: relative;
 }
 
-.choice-wrap {
+.mulchoice button {
     width: 90%;
     word-wrap: break-word;
 }
