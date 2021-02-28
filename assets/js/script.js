@@ -21,7 +21,6 @@ var scoreForm = document.querySelector('.score-results');
 var scoreForm1 = document.querySelector('.score-form1');
 var scoreList = document.querySelector('.score-list');
 var seeScores = document.querySelector('.view');
-
 var count = 0;
 var score = 0;
 var currentQuest = 0;
@@ -80,7 +79,9 @@ var quizQuestions = [
 
 //add event listener to START QUIZ so timer and questions run
 startButton.addEventListener('click', runQuestions);
-
+startButton.addEventListener('click', () => {
+    document.querySelector('#onclick').classList.add('myClass');
+  });
 //set timer and count down
 function startTimer() {
     count = 60;
@@ -112,8 +113,17 @@ function getQuestions() {
 }
 //check answer chosen against text to confirm right or wrong to then add or subtract points 
 choiceA.addEventListener('click', checkButton);
+choiceA.addEventListener('click', () => {
+    document.querySelector('.choice').classList.add('choice-wrap');
+  });
 choiceB.addEventListener('click', checkButton);
+choiceB.addEventListener('click', () => {
+    document.querySelector('.choice').classList.add('choice-wrap');
+  });
 choiceC.addEventListener('click', checkButton);
+choiceC.addEventListener('click', () => {
+    document.querySelector('.choice').classList.add('choice-wrap');
+  });
 
 var nextQuestion = quizQuestions.length - 1; 
 function checkButton(answer) {
@@ -193,10 +203,15 @@ clearScore.addEventListener('click', function(event) {
 
 //view highscore button when clicked displays high scores page
 seeScores.addEventListener('click', showHighscores);
+// seeScores.addEventListener('click', () => {
+//     document.querySelector('#onclick').classList.add('myClass');
+//   });
 function showHighscores() {
     welcome.classList.add('invisible');
+    quizContent.classList.add('invisible');
     resultsBox.style.display = "block";
     scoreForm.classList.add('invisible');
+    clearInterval(timer);
 
     var seeHighscores = JSON.parse(localStorage.getItem('initialsList'));
     for (var i = 0; i < seeHighscores.length; i++) {
@@ -206,31 +221,3 @@ function showHighscores() {
         scoreList.appendChild(highscoreLi);
     }
 }
-
-
-
-//on button click, add class invisible to welcome and remove class of invisble from quiz-box
-// at end of on click, call get question function 
-
-//call first question // quizQuestion[currentQuest].question to call on new questions and use .textContent to add to page
-//loop through quizQuestion[currentQuest].choices.length and add text to buttons
-//compare text on button they clicked (this.text) to quizQuestion[currentQuest].correctAnswer, include score++ 
-//if question is wrong, deduct 10s from timer (timer -= 10)
-//currentQuest++ and then recall same question to loop through earlier display text, choices, etc. 
-//create if statement to see if curretQuest === quizQuestions.length, if they are, run an end quiz function making this section invisible and results section visible
-
-//user setInterval to start timer
-
-//create function to have results page show and input initials
-//call score and display value 
-//on submit button click, add initials(name-content.value) and score (the global variable) to local storage
-
-//when submit button is clicked, hide results and display results-score section and call initials and score from local storage
-//on click of clear scores, clear local storage
-//on click of play again, redirect them to index.html
-
-//on click of high scores button, display high scores section
-
-//create funtion to render high score page - reset the page and loop through the scores, and make play again button visible
-
-

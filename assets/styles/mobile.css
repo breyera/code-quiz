@@ -1,0 +1,40 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font: 12px;
+}
+
+.nav{
+    width: 100%;
+}
+/* finished styling nav  */
+
+.container {
+    width: 90%;
+}
+
+.score-results button {
+    margin-left: 0;
+    margin-top: 2rem;
+}
+
+.name-content {
+    margin-top: 1rem;
+}
+
+.results h2 {
+    margin-bottom: 1rem;
+}
+
+.myClass {
+    position: fixed;
+}
+
+footer {
+    position: relative;
+}
+
+.choice-wrap {
+    width: 90%;
+    word-wrap: break-word;
+}
