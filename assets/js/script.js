@@ -23,6 +23,7 @@ var scoreList = document.querySelector('.score-list');
 var seeScores = document.querySelector('.view');
 var count = 0;
 var score = 0;
+var shouldSubmit = true;
 var currentQuest = 0;
 var initialsList = [];
 var quizQuestions = [
@@ -101,6 +102,7 @@ function startTimer() {
     welcome.classList.add('invisible');
     getQuestions();
     quizContent.classList.remove('invisible');
+    shouldSubmit = true;
 }
 
 //call first question to be displayed when time starts
@@ -168,18 +170,22 @@ function storeInitials() {
 }
 submitButton.addEventListener('click', function(event) {
     event.preventDefault();
-    var initialsText = initialsInput.value.trim();
-    console.log(initialsText);
+    if (shouldSubmit) {
+        var initialsText = initialsInput.value.trim();
+        console.log(initialsText);
 
-    if (initialsText === '') {
-        return;
+        if (initialsText === '') {
+            return;
+        }
+
+        initialsList.push(initialsText + ": " + score);
+        initialsList.value = "";
+
+        shouldSubmit = false;
+
+        storeInitials();
+        createScore();
     }
-
-    initialsList.push(initialsText + ": " + score);
-    initialsList.value = "";
-
-    storeInitials();
-    createScore();
 });
 
 // clear initials on clear scores button click
@@ -206,6 +212,7 @@ function showHighscores() {
     clearInterval(timer);
 
     var seeHighscores = JSON.parse(localStorage.getItem('initialsList'));
+    scoreList.innerHTML = '';
     for (var i = 0; i < seeHighscores.length; i++) {
         var list = seeHighscores[i];
         var highscoreLi = document.createElement('li');
