@@ -113,12 +113,12 @@ function getQuestions() {
     choiceB.innerHTML = questions.choiceB;
     choiceC.innerHTML = questions.choiceC;
 }
-//check answer chosen against text to confirm right or wrong to then add or subtract points 
+//add event listeners to multiple choice buttons
 choiceA.addEventListener('click', checkButton);
 choiceB.addEventListener('click', checkButton);
 choiceC.addEventListener('click', checkButton);
 
-
+//check answer chosen against text to confirm right or wrong to then add or subtract points 
 var nextQuestion = quizQuestions.length - 1; 
 function checkButton(answer) {
     if (answer.target.textContent === quizQuestions[currentQuest].correctAnswer) {
@@ -139,6 +139,7 @@ function checkButton(answer) {
 
 init();
 
+//create function to show score and allow user to add initials to log
 function createScore() {
     clearInterval(timer);
     quizContent.textContent = '';
@@ -180,7 +181,7 @@ submitButton.addEventListener('click', function(event) {
 
         initialsList.push(initialsText + ": " + score);
         initialsList.value = "";
-
+        //disable button so cannot be clicked twice
         shouldSubmit = false;
 
         storeInitials();
@@ -201,9 +202,6 @@ clearScore.addEventListener('click', function(event) {
 
 //view highscore button when clicked displays high scores page
 seeScores.addEventListener('click', showHighscores);
-// seeScores.addEventListener('click', () => {
-//     document.querySelector('#onclick').classList.add('myClass');
-//   });
 function showHighscores() {
     welcome.classList.add('invisible');
     quizContent.classList.add('invisible');
